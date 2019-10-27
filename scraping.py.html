@@ -1,0 +1,33 @@
+
+# coding: utf-8
+
+# In[1]:
+
+
+from bs4 import BeautifulSoup
+import requests
+
+
+# In[2]:
+
+
+page_link = 'https://www.volunteermatch.org'
+
+
+# In[3]:
+
+
+page_response = requests.get(page_link, timeout=5)
+
+
+# In[5]:
+
+
+page_content = BeautifulSoup(page_response.content, "html.parser")
+
+
+# In[14]:
+
+
+
+

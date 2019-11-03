@@ -2,7 +2,7 @@ import requests, csv
 from bs4 import BeautifulSoup
  
 
-URLS = [f"https://www.volunteermatch.org/search/?categories=25&s={s}" for s in [x*10+1 for x in range(70)]]
+URLS = [f"https://www.volunteermatch.org/search/?categories=23&s={s}" for s in [x*10+1 for x in range(12)]]
 #print(URLS)
 
 
@@ -35,10 +35,10 @@ for URL in URLS:
 #print(table)
 
 
-with open("vmatch_scrape2.csv", "w") as f:
+with open("vmatch_scrape_advocacy.csv", "w") as f:
     w = csv.DictWriter(f,['title','org','desc']) 
     w.writeheader()
     for opp in opps: 
         w.writerow(opp) 
-
+f.close()
 

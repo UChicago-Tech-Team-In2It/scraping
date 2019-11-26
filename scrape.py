@@ -48,9 +48,8 @@ def url_to_df(urls, cat):
                     desc_index = i
             opp['desc'] = row.find_all('p')[desc_index].getText().strip()
             opp['desc'] = opp['desc'].split('\n')[0]
-            opp['cat'] = True
+            opp[cat] = True
             opps.append(opp)
-    print(f'scraping for {cat} done!')
     dfs.append(DataFrame(opps))
 
 threads = []

@@ -50,7 +50,9 @@ def url_to_df(urls, cat):
             opp['desc'] = opp['desc'].split('\n')[0]
             opp[cat] = True
             opps.append(opp)
-    dfs.append(DataFrame(opps))
+    df = DataFrame(opps)
+    df = df.drop_duplicates(keep=False)
+    dfs.append(df)
 
 threads = []
 for cat, cat_v in categories.items():
@@ -69,6 +71,6 @@ for t in threads:
 final_df = reduce(lambda df1, df2: df1.merge(df2, left_on=['title', 'org', 'desc'],
                                                   right_on=['title', 'org', 'desc'],
                                                   how='outer'), dfs)
-final_df.fillna(False)
+final_df = final_df.fillna(False)
 final_df.to_csv(CSV_FNAME)
 

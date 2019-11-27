@@ -13,7 +13,13 @@ else:
 
 URL_PART1 = 'https://www.volunteermatch.org/search/'
 
-locations = ['New+York%2C+NY%2C+USA', 'Chicago%2C+IL%2C+USA']
+locations = ['New+York%2C+NY%2C+USA', 'Chicago%2C+IL%2C+USA',
+             'San+Francisco%2C+CA%2C+USA', 'Boston%2C+MA%2C+USA',
+             'Houston%2C+TX%2C+USA', 'Los+Angeles%2C+CA%2C+USA',
+             'Philadelphia%2C+PA%2C+USA', 'Seattle%2C+WA%2C+USA',
+             'Atlanta%2C+GA%2C+USA', 'Dallas%2C+TX%2C+USA',
+             'Portland%2C+OR%2C+USA', 'Cleveland%2C+OH%2C+USA',
+             'Denver%2C+CO%2C+USA', 'Washington%2C+DC%2C+USA']
 
 categories = {
     'community': 25,
